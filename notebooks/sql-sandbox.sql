@@ -13,6 +13,7 @@
 --up12
 -- up13
 -- up14
+-- up15
 
 -- COMMAND ----------
 
@@ -29,7 +30,19 @@ select * from mydb.employee;
 
 -- COMMAND ----------
 
-select * from legsim.stocks limit 10
+use default;
+create table delta_sales
+using delta
+location 's3://databricks2-data-bucket/sales_delta5'
+as select * from mydb.sales_data4;
+
+-- COMMAND ----------
+
+select * from default.delta_sales;
+
+-- COMMAND ----------
+
+select * from delta.`s3://databricks2-data-bucket/sales_delta`
 
 -- COMMAND ----------
 
