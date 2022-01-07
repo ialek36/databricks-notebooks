@@ -1,8 +1,7 @@
-import pytest
-from pyspark.sql import SparkSession
+import pyspark.sql.functions as F
+from pyspark.sql import DataFrame
 
 
-@pytest.fixture(scope="session")
-def spark_session():
-    spark = SparkSession.builder.master("local[*]").appName("test").getOrCreate()
-    return spark
+def sample_transform(input_df: DataFrame) -> DataFrame:
+    res = input_df.select(F.mean('age')).alias('new_column').collect()
+    return res
