@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- update 40
+-- update 41
 
 -- COMMAND ----------
 
@@ -13,7 +13,7 @@ show tables;
 
 -- COMMAND ----------
 
-select * from mydb.employee;
+select * from heart2.employee2;
 
 -- COMMAND ----------
 
@@ -42,6 +42,18 @@ select * from mydb.sales_data4 limit 20;
 -- COMMAND ----------
 
 select year, quarter, count(*) from mydb.sales_data4 group by year,quarter;
+
+-- COMMAND ----------
+
+select * from delta.`s3://databricks2-data-bucket/stock_quotes_partitioned/core8` limit 10;
+
+-- COMMAND ----------
+
+select * from delta.`s3://databricks2-data-bucket/sp500red/core/`
+
+-- COMMAND ----------
+
+select * from delta.`s3://databricks2-data-bucket/sp500red/core`
 
 -- COMMAND ----------
 
