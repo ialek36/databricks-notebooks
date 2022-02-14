@@ -1,5 +1,6 @@
 -- Databricks notebook source
 -- update 43
+-- update 46 in feature branch
 
 -- COMMAND ----------
 
@@ -56,4 +57,5 @@ select * from delta.`s3://databricks2-data-bucket/sp500red/core/`
 select * from delta.`s3://databricks2-data-bucket/sp500red/core`
 
 -- COMMAND ----------
+
 
