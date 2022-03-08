@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- update 54 in feature11
+-- update 55 in feature13
 
 -- COMMAND ----------
 
@@ -8,16 +8,24 @@ show databases;
 
 -- COMMAND ----------
 
-use mydb;
-show tables;
-
--- COMMAND ----------
-
 select * from heart2.employee2;
 
 -- COMMAND ----------
 
 use default;
+show tables;
+
+-- COMMAND ----------
+
+alter table default.diamonds rename to default.diamonds2;
+
+-- COMMAND ----------
+
+alter table heart2.employee2 rename to heart2.employee3;
+
+-- COMMAND ----------
+
+|use default;
 create table delta_sales
 using delta
 location 's3://databricks2-data-bucket/sales_delta5'
