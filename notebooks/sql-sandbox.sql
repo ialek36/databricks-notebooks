@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- update 57 in feature15
+-- update 58 in feature15
 
 -- COMMAND ----------
 
@@ -62,6 +62,16 @@ select * from delta.`s3://databricks2-data-bucket/sp500red/core/`
 -- COMMAND ----------
 
 select * from delta.`s3://databricks2-data-bucket/sp500red/core`
+
+-- COMMAND ----------
+
+create table myjson
+using org.apache.spark.sql.json
+OPTIONs (path 's3://databricks2-data-bucket/aws_config/json-sync/*/')
+
+-- COMMAND ----------
+
+select * from myjson limit 5;
 
 -- COMMAND ----------
 
